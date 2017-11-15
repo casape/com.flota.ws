@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <!-- El resto del contenido de este fichero solo es necesario para servidores de servlets con versiones antiguas: 2.x -->
+  <!-- Usando el tomcat 8 con la versión 3.1 no es necesario -->
+  <display-name>com.flota.ws</display-name>
+    <servlet>
+    <servlet-name>Jersey REST Service</servlet-name>
+    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+    <!-- Register resources and providers under com.restfully.shop.services package. -->
+    <init-param>
+      <param-name>javax.ws.rs.Application</param-name>
+      <param-value>com.flota.ws.servicios.JuegoApplication</param-value>
+    </init-param>
+  </servlet>
+  <!-- El servlet-mapping es innecesario si se incluye con la anotación @ApplicationPath en la clase que extiende Application -->
+  <servlet-mapping>
+    <servlet-name>Jersey REST Service</servlet-name>
+    <url-pattern>/servicios/*</url-pattern>
+  </servlet-mapping>
+</web-app>
