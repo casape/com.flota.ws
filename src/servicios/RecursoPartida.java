@@ -114,7 +114,7 @@ public class RecursoPartida {
 	public Response pruebaCasilla(@PathParam("idPartida") int idPartida, @PathParam("fila") int fila,
 			@PathParam("columna") int columna) {
 		int resultado = partidaDB.get(idPartida).pruebaCasilla(fila, columna);
-		ResponseBuilder builder = Response.ok(resultado);
+		ResponseBuilder builder = Response.ok(resultado); 
 		return builder.build();
 	}
 
