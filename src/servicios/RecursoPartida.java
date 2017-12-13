@@ -65,6 +65,8 @@ public class RecursoPartida {
 		Partida partida = new Partida(filas, columnas, barcos);
 		int id = idCounter.incrementAndGet();
 		partidaDB.put(id, partida);
+		
+		System.out.println("Partida con id: "+id+" CREADA");
 
 		// Construye la respuesta incluyendo la URI absoluta al nuevo recurso
 		// partida
@@ -94,6 +96,7 @@ public class RecursoPartida {
 			return Response.status(Response.Status.NOT_FOUND).build();
 		else {
 			ResponseBuilder builder = Response.ok();
+			System.out.println("Partida con id: "+idPartida+" BORRADA");
 			return builder.build();
 		}
 	}
