@@ -114,6 +114,7 @@ public class RecursoPartida {
 	 */
 	@PUT
 	@Path("/{idPartida}/casilla/{fila},{columna}")
+	@Produces("text/plain")
 	public Response pruebaCasilla(@PathParam("idPartida") int idPartida, @PathParam("fila") int fila,
 			@PathParam("columna") int columna) {
 		int resultado = partidaDB.get(idPartida).pruebaCasilla(fila, columna);
